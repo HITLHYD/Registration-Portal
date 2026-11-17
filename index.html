@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HITL Student Talent & Innovation Challenge 2026 – Registration</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --ink:#050505; --panel:#111009; --line:#3a3015; --gold:#d9a93a; --gold-hi:#f4d27a; --text:#f3ede0; --muted:#b5ab95; --red:#e0312f; --err:#ff8a80;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--ink) radial-gradient(900px 500px at 80% -10%,#3a2c0a55,transparent),radial-gradient(700px 400px at 0% 30%,#2a1f0640,transparent);color:var(--text);font:400 16px/1.55 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line);padding:14px 0}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700}
+.logo{width:46px;height:46px;border-radius:50%;background:#fff;border:3px solid var(--red);display:grid;place-items:center;color:#000;font:800 13px "Source Sans 3";letter-spacing:.5px}
+.brand small{display:block;color:var(--muted);font-weight:400;font-style:italic}
+.hero{text-align:center;padding:48px 0 28px}
+.hero .org{color:var(--red);font-weight:700;letter-spacing:.02em}
+.hero h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.1;margin:10px 0 6px;font-weight:800;background:linear-gradient(180deg,var(--gold-hi),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:56ch;margin:8px auto 0}
+.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.badge{border:1px solid var(--gold);border-radius:999px;padding:6px 16px;font-weight:600;color:var(--gold-hi);background:#1a1405}
+.grid{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;align-items:start;padding-bottom:56px}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px}
+.card h2{font-size:1.5rem;color:var(--gold-hi);margin-bottom:4px}
+.sub{color:var(--muted);margin:0 0 20px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+label{display:block;font-weight:600;margin:0 0 6px;font-size:.95rem}
+label .req{color:var(--red)}
+.f{margin-bottom:16px}
+input,select{width:100%;background:#0b0a06;color:var(--text);border:1px solid #4a3d1a;border-radius:8px;padding:12px 13px;font:inherit}
+input::placeholder{color:#7d7560}
+input:focus,select:focus,button:focus-visible,.decl input:focus-visible{outline:2px solid var(--gold-hi);outline-offset:2px}
+.err{display:none;color:var(--err);font-size:.85rem;margin-top:4px}
+.f.bad .err{display:block}.f.bad input,.f.bad select{border-color:var(--err)}
+.decl{display:flex;gap:12px;align-items:flex-start;background:#0b0a06;border:1px solid var(--line);border-radius:8px;padding:14px;font-size:.92rem;color:var(--muted)}
+.decl input{width:20px;height:20px;margin-top:3px;accent-color:var(--gold);flex:none}
+.pay{border:1px dashed var(--gold);border-radius:10px;padding:16px;margin:18px 0;background:#15110500}
+.pay .amt{font:800 2rem "Playfair Display",serif;color:var(--gold-hi)}
+.pay ol{margin:8px 0 0;padding-left:20px;color:var(--muted);font-size:.93rem}
+.pay a.upi{display:inline-block;margin-top:10px;color:var(--gold-hi);font-weight:600}
+button.submit{width:100%;border:0;border-radius:10px;padding:15px;font:700 1.05rem "Source Sans 3";color:#1a1200;background:linear-gradient(180deg,var(--gold-hi),var(--gold));cursor:pointer}
+button.submit:hover{filter:brightness(1.08)}
+.paygrid{display:grid;grid-template-columns:176px 1fr;gap:20px;align-items:center;margin-top:12px}
+@media(max-width:560px){.paygrid{grid-template-columns:1fr;justify-items:center;text-align:center}}
+.qrbox{background:#fff;border-radius:12px;padding:10px;width:176px;height:176px;display:grid;place-items:center;border:3px solid var(--gold)}
+.qrbox img,.qrbox canvas{max-width:100%;height:auto;display:block}
+.upirow{display:flex;align-items:center;gap:8px;background:#0b0a06;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:8px 0;justify-content:space-between}
+.upirow code{color:var(--gold-hi);font-weight:700;font-size:1rem;word-break:break-all}
+.upirow button{background:transparent;color:var(--gold-hi);border:1px solid var(--gold);border-radius:6px;padding:5px 10px;font:600 .8rem "Source Sans 3";cursor:pointer}
+a.paybtn{display:block;text-align:center;text-decoration:none;color:#1a1200;background:linear-gradient(180deg,var(--gold-hi),var(--gold));border-radius:8px;padding:11px 14px;font-weight:700;margin-top:6px}
+.hint{font-size:.82rem;color:var(--muted);margin-top:6px}
+.note{font-size:.85rem;color:var(--muted);margin-top:10px;text-align:center}
+.side h3{font-size:1.15rem;color:var(--gold-hi);margin:0 0 12px}
+.cat{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.cat:last-child{border:0}.cat b{display:block}.cat span{color:var(--muted);font-size:.88rem}
+.cat time{white-space:nowrap;color:var(--gold-hi);font-weight:600;font-size:.9rem;text-align:right}
+.side ul{padding-left:18px;margin:0;color:var(--muted)}.side li{margin:6px 0}
+.side .card+.card{margin-top:20px}
+.timeline p{margin:0;padding:8px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;font-size:.93rem}
+.timeline p span:last-child{color:var(--gold-hi);font-weight:600;text-align:right}
+footer{border-top:1px solid var(--line);padding:22px 0;text-align:center;color:var(--muted);font-size:.9rem}
+footer a{color:var(--gold-hi);text-decoration:none}
+.ok{display:none;text-align:center;padding:10px 0}.ok h3{color:var(--gold-hi);font-size:1.4rem;margin-bottom:8px}
+.ok a{display:inline-block;margin-top:12px;padding:12px 22px;background:#25d366;color:#04210f;border-radius:10px;font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand"><div class="logo" aria-hidden="true">HITL</div><div>HITL PVT LTD<small>Your Idea, Our Implementation!!</small></div></div>
+  <div style="color:var(--muted)">Student Community</div>
+</div></header>
+
+<section class="hero wrap">
+  <div class="org">Student Community · Organised by HITL PVT LTD</div>
+  <h1>Student Talent &amp; Innovation Challenge 2026</h1>
+  <p>Showcase your talent, compete with confidence and celebrate your achievement. Registrations are open from 17 to 25 November 2026.</p>
+  <div class="badges"><span class="badge">Registration fee ₹99 per student</span><span class="badge">Awards ceremony: 12 Dec 2026, Hyderabad</span></div>
+</section>
+
+<main class="wrap grid">
+  <section class="card" id="register" aria-labelledby="rt">
+    <div id="formArea">
+    <h2 id="rt">Register now</h2>
+    <p class="sub">Fill in your details. Our team verifies every registration on WhatsApp.</p>
+    <form id="reg" novalidate>
+      <div class="f"><label for="name">Full name <span class="req">*</span></label><input id="name" autocomplete="name" placeholder="As it should appear on your certificate"><div class="err">Enter your full name.</div></div>
+      <div class="row">
+        <div class="f"><label for="branch">Branch <span class="req">*</span></label><input id="branch" placeholder="e.g. CSE, ECE, Mechanical"><div class="err">Enter your branch.</div></div>
+        <div class="f"><label for="college">College name <span class="req">*</span></label><input id="college" placeholder="Your college"><div class="err">Enter your college name.</div></div>
+      </div>
+      <div class="row">
+        <div class="f"><label for="email">Email ID <span class="req">*</span></label><input id="email" type="email" autocomplete="email" placeholder="name@example.com"><div class="err">Enter a valid email address.</div></div>
+        <div class="f"><label for="mobile">Mobile number <span class="req">*</span></label><input id="mobile" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="10-digit number"><div class="err">Enter a valid 10-digit mobile number.</div></div>
+      </div>
+      <div class="f"><label for="cat">Competition category <span class="req">*</span></label>
+        <select id="cat">
+          <option value="">Select a category</option>
+          <option>Project Innovation Challenge – 28 &amp; 29 Nov</option>
+          <option>Technical Quiz Challenge – 30 Nov</option>
+          <option>Creative Design Challenge – 2 Dec</option>
+          <option>Coding Challenge – 4 Dec</option>
+        </select><div class="err">Select a competition category.</div></div>
+
+      <div class="pay">
+        <div>Registration fee: <span class="amt">₹99</span> <span style="color:var(--muted)">per student</span></div>
+        <div class="paygrid">
+          <div class="qrbox" id="qr" aria-label="UPI QR code for ₹99"></div>
+          <div>
+            <div style="font-weight:600">Scan with any UPI app</div>
+            <div class="hint" style="margin:0">Google Pay, PhonePe, Paytm, BHIM and others</div>
+            <div class="upirow"><code id="upiText"></code><button type="button" id="copyUpi">Copy</button></div>
+            <a class="paybtn" id="upiLink" href="#">Pay ₹99 with UPI app</a>
+            <div class="hint">On a phone, tap the button to open your UPI app. On a computer, scan the QR code.</div>
+          </div>
+        </div>
+        <ol>
+          <li>Pay ₹99 to HITL PVT LTD and take a screenshot of the payment.</li>
+          <li>Enter the UPI transaction / reference ID below.</li>
+          <li>After you submit, send the WhatsApp message and attach your screenshot.</li>
+        </ol>
+      </div>
+      <div class="f"><label for="txn">UPI transaction / reference ID <span class="req">*</span></label><input id="txn" placeholder="12-digit UPI reference number"><div class="err">Enter the transaction ID of your ₹99 payment.</div></div>
+
+      <div class="f" id="declF"><label class="decl" for="decl"><input type="checkbox" id="decl"><span>I declare that the details provided are true and correct, I have paid the ₹99 registration fee, and I agree to follow the rules of the HITL Student Talent &amp; Innovation Challenge 2026. The registration fee is non-refundable.</span></label><div class="err">Accept the declaration to continue.</div></div>
+
+      <button class="submit" type="submit">Submit registration</button>
+      <p class="note">Submitting opens WhatsApp with your details filled in. Tap Send to complete your registration.</p>
+    </form>
+    </div>
+    <div class="ok" id="ok" role="status"><h3>One last step</h3><p>Your details are ready. If WhatsApp did not open, tap the button and press Send so the team can verify your registration.</p><a id="waBtn" href="#" target="_blank" rel="noopener">Open WhatsApp</a></div>
+  </section>
+
+  <aside class="side">
+    <div class="card"><h3>Competition categories</h3>
+      <div class="cat"><div><b>Project Innovation Challenge</b><span>Present your idea and build</span></div><time>28 &amp; 29 Nov</time></div>
+      <div class="cat"><div><b>Technical Quiz Challenge</b><span>Test your technical knowledge</span></div><time>30 Nov</time></div>
+      <div class="cat"><div><b>Creative Design Challenge</b><span>Show your design thinking</span></div><time>2 Dec</time></div>
+      <div class="cat"><div><b>Coding Challenge</b><span>Solve problems with code</span></div><time>4 Dec</time></div>
+    </div>
+    <div class="card timeline"><h3>Schedule</h3>
+      <p><span>Registrations</span><span>17–25 Nov</span></p>
+      <p><span>Competitions</span><span>26 Nov–5 Dec</span></p>
+      <p><span>Evaluation</span><span>6–8 Dec</span></p>
+      <p><span>Winner announcements</span><span>9–11 Dec</span></p>
+      <p style="border:0"><span>Awards ceremony</span><span>12 Dec, 2–5 PM</span></p>
+      <p style="border:0;color:var(--muted);font-size:.85rem">Venue: HITL Office, BN Reddy Nagar, Hyderabad</p>
+    </div>
+    <div class="card"><h3>Student benefits</h3><ul>
+      <li>Showcase your skills</li><li>Evaluation by the HITL panel</li><li>Certificate of Participation</li><li>Category awards and recognition</li><li>Winners invited to the HITL Awards &amp; Recognition Ceremony</li></ul></div>
+  </aside>
+</main>
+
+<footer><div class="wrap">HITL PVT LTD · <a href="https://www.hitl.co.in" target="_blank" rel="noopener">www.hitl.co.in</a> · <a href="tel:+919553650061">95536 50061</a> · <a href="mailto:info@hitl.co.in">info@hitl.co.in</a></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+// ===== Settings =====
+var WHATSAPP_NUMBER = "919553650061"; // country code + number
+var UPI_ID = "hitlpayment@ibl";
+var UPI_NAME = "HITL PVT LTD";
+// ====================
+var $ = function(id){return document.getElementById(id)};
+var UPI_URL = "upi://pay?pa=" + encodeURIComponent(UPI_ID) + "&pn=" + encodeURIComponent(UPI_NAME) + "&am=99&cu=INR&tn=" + encodeURIComponent("HITL Challenge 2026 Registration");
+$("upiLink").href = UPI_URL;
+$("upiText").textContent = UPI_ID;
+try {
+  new QRCode($("qr"), {text: UPI_URL, width: 150, height: 150, colorDark: "#000000", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M});
+} catch (err) {
+  $("qr").textContent = "Use the UPI ID";
+}
+$("copyUpi").addEventListener("click", function(){
+  var b = this;
+  function done(){ b.textContent = "Copied"; setTimeout(function(){ b.textContent = "Copy"; }, 1500); }
+  try { navigator.clipboard.writeText(UPI_ID).then(done, done); } catch (err) { done(); }
+});
+function setBad(el, bad){ el.closest(".f").classList.toggle("bad", bad); return !bad; }
+$("reg").addEventListener("submit", function(e){
+  e.preventDefault();
+  var v = {
+    name: $("name").value.trim(), branch: $("branch").value.trim(), college: $("college").value.trim(),
+    email: $("email").value.trim(), mobile: $("mobile").value.replace(/\s/g,""), cat: $("cat").value, txn: $("txn").value.trim()
+  };
+  var ok = true;
+  ok = setBad($("name"), v.name.length < 2) && ok;
+  ok = setBad($("branch"), !v.branch) && ok;
+  ok = setBad($("college"), !v.college) && ok;
+  ok = setBad($("email"), !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.email)) && ok;
+  ok = setBad($("mobile"), !/^[6-9]\d{9}$/.test(v.mobile)) && ok;
+  ok = setBad($("cat"), !v.cat) && ok;
+  ok = setBad($("txn"), v.txn.length < 6) && ok;
+  ok = setBad($("decl"), !$("decl").checked) && ok;
+  if (!ok) { var first = document.querySelector(".f.bad input, .f.bad select"); if (first) first.focus(); return; }
+
+  var msg = [
+    "*HITL Student Talent & Innovation Challenge 2026 – Registration*", "",
+    "*Name:* " + v.name,
+    "*Branch:* " + v.branch,
+    "*College:* " + v.college,
+    "*Email:* " + v.email,
+    "*Mobile:* " + v.mobile,
+    "*Category:* " + v.cat,
+    "*Fee:* ₹99 (UPI Ref: " + v.txn + ")",
+    "*Declaration:* Accepted", "",
+    "Please verify my registration. Payment screenshot attached."
+  ].join("\n");
+  var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+  $("waBtn").href = url;
+  $("formArea").style.display = "none";
+  $("ok").style.display = "block";
+  $("register").scrollIntoView();
+  window.open(url, "_blank", "noopener");
+});
+</script>
+</body>
+</html>
